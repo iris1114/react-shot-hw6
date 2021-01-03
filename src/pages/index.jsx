@@ -1,7 +1,7 @@
 
 import React from "react";
 import HeroListPage from "./HeroListPage"
-import HeroProfilePage from "./HeroProfilePage/index"
+import HeroProfilePage from "./HeroProfilePage"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 const HeroPage = () => {

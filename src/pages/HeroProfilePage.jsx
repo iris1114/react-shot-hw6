@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import HeroCouter from "../../components/HeroCounter";
+import HeroCouter from "../components/HeroCounter";
 
 const HeroProfile = () => {
 

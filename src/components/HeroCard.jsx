@@ -1,20 +1,22 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 const HeroCard = (props) => {
     const { card } = props;
 
-    console.log(card);
-
     return(
-    <Card>
-        <Card.Img variant="top" src={card.image} />
-        <Card.Body className="text-center">
-            <Card.Text className="f-lg-xl">{card.name}:</Card.Text>
-            <Card.Text className="f-lg-m">{card.petPhrase}</Card.Text>
-        </Card.Body>
-    </Card>
+        <Card>
+            <Link to={`/heroes/${card.id}`}>
+                <Card.Img variant="top" src={card.image} />
+                <Card.Body className="text-center">
+                    <Card.Text className="f-lg-xl">{card.name}:</Card.Text>
+                    <Card.Text className="f-lg-m">{card.petPhrase}</Card.Text>
+                </Card.Body>
+            
+            </Link>
+        </Card>
     );
 
 

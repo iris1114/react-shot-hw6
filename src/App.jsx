@@ -2,7 +2,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/common.css";
-import HeroPage from "./pages/HeroPage";
+import HeroPage from "./pages";
 
 
 

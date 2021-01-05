@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import HeroCouter from "../components/HeroCounter";
 
 const HeroProfile = () => {
@@ -29,9 +29,20 @@ const HeroProfile = () => {
         setRestPoint(restPoint + newPoint);
     };
 
+
     const handleSave = () => {
-        console.log("save");
-    }
+        alert("hero update success");
+      };
+    
+      const [editable, setEditable] = useState(true);
+    
+      useEffect(() => {
+        if (restPoint > 0) {
+          setEditable(false);
+        } else {
+          setEditable(true);
+        }
+      }, [restPoint]);
 
     return (
         <div className="container">
@@ -49,7 +60,7 @@ const HeroProfile = () => {
                 </div>
                 <div className="col-4 align-self-end mb-3 d-flex flex-column">
                     <p className="mb-3">剩餘點數：{restPoint}</p>
-                    <button className="btn btn-primary" onClick={handleSave}>儲存</button>
+                    <button className="btn btn-primary" onClick={handleSave} disabled={!editable}>儲存</button>
                 </div>
             </div>
         </div>
